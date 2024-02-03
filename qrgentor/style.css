@@ -1,0 +1,93 @@
+html, body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(131, 58, 180);
+    background: linear-gradient(5deg, rgba(131, 58, 180, 1) 21%, rgba(210, 217, 211, 1) 100%, rgba(252, 176, 69, 1) 100%);
+    font-size: x-large;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.card {
+    height: auto;
+    width: auto;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 30px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    backdrop-filter: blur(10px);
+    background: rgb(131,58,180);
+background: linear-gradient(329deg, rgba(131,58,180,1) 43%, rgba(21,233,52,1) 100%, rgba(252,176,69,1) 100%);
+
+}
+
+.input-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+input {
+    height: 28px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: white;
+   
+    border-radius: 5px;
+    outline: none;
+}
+
+button {
+    height: 40px;
+    width: 100%;
+    margin: 10px;
+    border-radius: 9px;
+    background: rgba(255, 255, 255, 0.8);
+    color: rgb(131, 58, 180);
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: rgba(255, 255, 255, 0.6);
+}
+  /* Add some styles for animation */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.qr img {
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Add styles for error message */
+.error {
+    color: red;
+    font-size: 14px;
+}
+        /* Add some styles for animation */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .qr img {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        /* Add styles for error message */
+        .error {
+            color: red;
+            font-size: 14px;
+        }

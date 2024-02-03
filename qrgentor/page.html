@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Add some styles for animation */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .qr img {
+            animation: fadeIn 1s ease-in-out;
+            display: none; /* Initially hide the image */
+        }
+
+        /* Add styles for error message */
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="h2">
+            Enter your Text or URL
+        </div>
+        <div class="box">
+            <input type="text" class="text" id="qrText" placeholder="Type here...">
+            <!-- Display an error message for null value -->
+            <div id="error" class="error"></div>
+        </div>
+        <div class="qr">
+            <img src="" id="qrImage" alt="QR Code">
+        </div>
+        <div class="but">
+            <button class="butt" onclick="generateQR()">
+                Generate QR Code
+            </button>
+        </div>
+    </div>
+    <script>
+        function generateQR() {
+            let qrText = document.getElementById("qrText").value;
+            let qrImage = document.getElementById("qrImage");
+            let errorDiv = document.getElementById("error");
+
+            // Check for null or empty value
+            if (!qrText) {
+                errorDiv.textContent = "Please enter a valid text or URL.";
+                return;
+            }
+
+            // Clear previous error message
+            errorDiv.textContent = "";
+
+            // Display the QR Code image
+            qrImage.style.display = "block";
+
+            // Generate QR Code
+            qrImage.src = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + encodeURIComponent(qrText);
+        }
+    </script>
+</body>
+</html>
